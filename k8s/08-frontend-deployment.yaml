@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-frontend
+  namespace: movie-watchlist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movie-frontend
+  template:
+    metadata:
+      labels:
+        app: movie-frontend
+    spec:
+      containers:
+        - name: movie-frontend
+          image: stefanishan33/movie-watchlist-frontend:latest
+          ports:
+            - containerPort: 80
