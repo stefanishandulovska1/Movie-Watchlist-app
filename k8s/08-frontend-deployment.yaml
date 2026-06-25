@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: movie-frontend
-          image: stefanishan33/movie-watchlist-frontend:v2
+          image: stefanishan33/movie-watchlist-frontend:v4
           ports:
             - containerPort: 80

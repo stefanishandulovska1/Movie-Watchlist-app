@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: movie-db-init
+  namespace: movie-watchlist
+data:
+  init.sql: |
+    CREATE TABLE IF NOT EXISTS movies (
+      id SERIAL PRIMARY KEY,
+      title VARCHAR(255) NOT NULL,
+      description TEXT,
+      genre VARCHAR(100),
+      release_year INT,
+      is_favorite BOOLEAN DEFAULT false,
+      is_watched BOOLEAN DEFAULT false,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+
+    INSERT INTO movies (title, description, genre, release_year, is_favorite, is_watched)
+    VALUES
+      ('Inception', 'A mind-bending sci-fi thriller about dreams within dreams.', 'Sci-Fi', 2010, true, true),
+      ('Interstellar', 'A space exploration story about survival and time.', 'Sci-Fi', 2014, true, false);
