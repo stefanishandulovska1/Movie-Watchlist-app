@@ -214,10 +214,10 @@ export default function App() {
 
                 <div className="card-buttons">
                   <button type="button" onClick={() => handleFavorite(movie.id)}>
-                    Toggle favorite
+                     Favorite
                   </button>
                   <button type="button" onClick={() => handleWatched(movie.id)}>
-                    Toggle watched
+                    Watched
                   </button>
                   <button type="button" onClick={() => handleEdit(movie)}>
                     Edit
